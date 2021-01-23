@@ -88,7 +88,7 @@ class Home extends CI_Controller {
         }
 
         $page_data['page_name']  = "courses_page";
-        $page_data['page_title'] = get_phrase('courses');
+        $page_data['page_title'] = get_phrase('cursos');
         $page_data['layout']     = $layout;
         $page_data['selected_category_id']     = $selected_category_id;
         $page_data['selected_price']     = $selected_price;
@@ -107,13 +107,13 @@ class Home extends CI_Controller {
         $this->access_denied_courses($course_id);
         $page_data['course_id'] = $course_id;
         $page_data['page_name'] = "course_page";
-        $page_data['page_title'] = get_phrase('course');
+        $page_data['page_title'] = get_phrase('curso');
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
 
     public function instructor_page($instructor_id = "") {
         $page_data['page_name'] = "instructor_page";
-        $page_data['page_title'] = get_phrase('instructor_page');
+        $page_data['page_title'] = get_phrase('pagina_instructor');
         $page_data['instructor_id'] = $instructor_id;
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
@@ -123,7 +123,7 @@ class Home extends CI_Controller {
             redirect(site_url('home'), 'refresh');
         }
         $page_data['page_name'] = "my_courses";
-        $page_data['page_title'] = get_phrase("my_courses");
+        $page_data['page_title'] = get_phrase("mis_cursos");
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
 
@@ -136,12 +136,12 @@ class Home extends CI_Controller {
         }
         elseif ($param1 == 'send_new') {
             $message_thread_code = $this->crud_model->send_new_private_message();
-            $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
+            $this->session->set_flashdata('flash_message', get_phrase('mensaje enviado!'));
             redirect(site_url('home/my_messages/read_message/' . $message_thread_code), 'refresh');
         }
         elseif ($param1 == 'send_reply') {
             $this->crud_model->send_reply_message($param2); //$param2 = message_thread_code
-            $this->session->set_flashdata('flash_message', get_phrase('message_sent!'));
+            $this->session->set_flashdata('flash_message', get_phrase('mensaje_enviado!'));
             redirect(site_url('home/my_messages/read_message/' . $param2), 'refresh');
         }
         $page_data['page_name'] = "my_messages";
