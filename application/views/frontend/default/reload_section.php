@@ -2,9 +2,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th><?php echo get_phrase('title'); ?></th>
-                <th><?php echo get_phrase('lessons'); ?></th>
-                <th><?php echo get_phrase('actions'); ?></th>
+                <th><?php echo get_phrase('titulo'); ?></th>
+                <th><?php echo get_phrase('lecciones'); ?></th>
+                <th><?php echo get_phrase('acciones'); ?></th>
             </tr>
         </thead>
         <tbody>
@@ -26,8 +26,8 @@
                         </ul>
                     </td>
                     <td>
-                        <a href="#" onclick="addNameAndIdOnForm('<?php echo $section ?>', '<?php echo $section_details['title'] ?>')"><?php echo get_phrase('edit'); ?></a>
-                        <a href="#" onclick="confirm_modal('<?php echo site_url('home/sections/delete/'.$course_id.'/'.$section); ?>');"><?php echo get_phrase('delete'); ?></a>
+                        <a href="#" onclick="addNameAndIdOnForm('<?php echo $section ?>', '<?php echo $section_details['title'] ?>')"><?php echo get_phrase('editar'); ?></a>
+                        <a href="#" onclick="confirm_modal('<?php echo site_url('home/sections/delete/'.$course_id.'/'.$section); ?>');"><?php echo get_phrase('eliminar'); ?></a>
                     </td>
                 </tr>
             <?php endforeach; ?>

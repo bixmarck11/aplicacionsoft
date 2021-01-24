@@ -2,8 +2,8 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('courses'); ?>
-                    <a href="<?php echo site_url('user/course_form/add_course'); ?>" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_new_course'); ?></a>
+                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('cursos'); ?>
+                    <a href="<?php echo site_url('user/course_form/add_course'); ?>" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('agregar_nuevos_cursos'); ?></a>
                 </h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
@@ -25,7 +25,7 @@
                                             echo $active_courses->num_rows();
                                          ?>
                                     </span></h3>
-                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('active_courses'); ?></p>
+                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('curso_activos'); ?></p>
                                 </div>
                             </div>
                         </a>
@@ -42,7 +42,7 @@
                                             echo $pending_courses->num_rows();
                                          ?>
                                     </span></h3>
-                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('pending_courses'); ?></p>
+                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('cursos_pendientes'); ?></p>
                                 </div>
                             </div>
                         </a>
@@ -59,7 +59,7 @@
                                             echo $draft_courses->num_rows();
                                          ?>
                                     </span></h3>
-                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('draft_courses'); ?></p>
+                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('curso_borrador'); ?></p>
                                 </div>
                             </div>
                         </a>
@@ -71,7 +71,7 @@
                                 <div class="card-body text-center">
                                     <i class="dripicons-star text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $this->crud_model->get_free_and_paid_courses('free', $this->session->userdata('user_id'))->num_rows(); ?></span></h3>
-                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('free_courses'); ?></p>
+                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('cursos_libres'); ?></p>
                                 </div>
                             </div>
                         </a>
@@ -83,7 +83,7 @@
                                 <div class="card-body text-center">
                                     <i class="dripicons-tags text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $this->crud_model->get_free_and_paid_courses('paid', $this->session->userdata('user_id'))->num_rows(); ?></span></h3>
-                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('paid_courses'); ?></p>
+                                    <p class="text-muted font-15 mb-0"><?php echo get_phrase('cursos_costo'); ?></p>
                                 </div>
                             </div>
                         </a>
@@ -98,14 +98,14 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="mb-3 header-title"><?php echo get_phrase('course_list'); ?></h4>
+                <h4 class="mb-3 header-title"><?php echo get_phrase('cursos_lista'); ?></h4>
                 <form class="row justify-content-center" action="<?php echo site_url('user/courses'); ?>" method="get">
                     <!-- Course Categories -->
                     <div class="col-xl-3">
                         <div class="form-group">
-                            <label for="category_id"><?php echo get_phrase('categories'); ?></label>
+                            <label for="category_id"><?php echo get_phrase('categorias'); ?></label>
                             <select class="form-control select2" data-toggle="select2" name="category_id" id="category_id">
-                                <option value="<?php echo 'all'; ?>" <?php if($selected_category_id == 'all') echo 'selected'; ?>><?php echo get_phrase('all'); ?></option>
+                                <option value="<?php echo 'all'; ?>" <?php if($selected_category_id == 'all') echo 'selected'; ?>><?php echo get_phrase('todos'); ?></option>
                                 <?php foreach ($categories->result_array() as $category): ?>
                                     <optgroup label="<?php echo $category['name']; ?>">
                                         <?php $sub_categories = $this->crud_model->get_sub_categories($category['id']);
@@ -121,11 +121,11 @@
                 <!-- Course Status -->
                 <div class="col-xl-3">
                     <div class="form-group">
-                        <label for="status"><?php echo get_phrase('status'); ?></label>
+                        <label for="status"><?php echo get_phrase('estado'); ?></label>
                         <select class="form-control select2" data-toggle="select2" name="status" id = 'status'>
-                            <option value="all" <?php if($selected_status == 'all') echo 'selected'; ?>><?php echo get_phrase('all'); ?></option>
-                            <option value="active" <?php if($selected_status == 'active') echo 'selected'; ?>><?php echo get_phrase('active'); ?></option>
-                            <option value="pending" <?php if($selected_status == 'pending') echo 'selected'; ?>><?php echo get_phrase('pending'); ?></option>
+                            <option value="all" <?php if($selected_status == 'all') echo 'seleccionados'; ?>><?php echo get_phrase('todos'); ?></option>
+                            <option value="active" <?php if($selected_status == 'active') echo 'seleccionados'; ?>><?php echo get_phrase('activos'); ?></option>
+                            <option value="pending" <?php if($selected_status == 'pending') echo 'seleccionados'; ?>><?php echo get_phrase('pendientes'); ?></option>
                         </select>
                     </div>
                 </div>
@@ -135,16 +135,16 @@
                     <div class="form-group">
                         <label for="price"><?php echo get_phrase('price'); ?></label>
                         <select class="form-control select2" data-toggle="select2" name="price" id = 'price'>
-                            <option value="all"  <?php if($selected_price == 'all' ) echo 'selected'; ?>><?php echo get_phrase('all'); ?></option>
-                            <option value="free" <?php if($selected_price == 'free') echo 'selected'; ?>><?php echo get_phrase('free'); ?></option>
-                            <option value="paid" <?php if($selected_price == 'paid') echo 'selected'; ?>><?php echo get_phrase('paid'); ?></option>
+                            <option value="all"  <?php if($selected_price == 'all' ) echo 'selected'; ?>><?php echo get_phrase('todos'); ?></option>
+                            <option value="free" <?php if($selected_price == 'free') echo 'selected'; ?>><?php echo get_phrase('libres'); ?></option>
+                            <option value="paid" <?php if($selected_price == 'paid') echo 'selected'; ?>><?php echo get_phrase('pagados'); ?></option>
                         </select>
                     </div>
                 </div>
 
                 <div class="col-xl-3">
-                    <label for=".." class="text-white"><?php echo get_phrase('..'); ?></label>
-                    <button type="submit" class="btn btn-primary btn-block" name="button"><?php echo get_phrase('filter'); ?></button>
+                    <label for=".." class="text-white"><?php echo get_phrase('...'); ?></label>
+                    <button type="submit" class="btn btn-primary btn-block" name="button"><?php echo get_phrase('filtros'); ?></button>
                 </div>
             </form>
 
@@ -154,13 +154,13 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th><?php echo get_phrase('title'); ?></th>
-                                <th><?php echo get_phrase('category'); ?></th>
-                                <th><?php echo get_phrase('lesson_&_section'); ?></th>
-                                <th><?php echo get_phrase('enrolled_student'); ?></th>
-                                <th><?php echo get_phrase('status'); ?></th>
-                                <th><?php echo get_phrase('price'); ?></th>
-                                <th><?php echo get_phrase('actions'); ?></th>
+                                <th><?php echo get_phrase('titulo'); ?></th>
+                                <th><?php echo get_phrase('categoria'); ?></th>
+                                <th><?php echo get_phrase('leccionn_&_seccion'); ?></th>
+                                <th><?php echo get_phrase('estudiantes_matriculados'); ?></th>
+                                <th><?php echo get_phrase('estados'); ?></th>
+                                <th><?php echo get_phrase('precio'); ?></th>
+                                <th><?php echo get_phrase('acciones'); ?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -181,11 +181,11 @@
                                         <span class="badge badge-dark-lighten"><?php echo $category_details['name']; ?></span>
                                     </td>
                                     <td>
-                                        <small class="text-muted"><?php echo '<b>'.get_phrase('total_section').'</b>: '.$sections->num_rows(); ?></small><br>
-                                        <small class="text-muted"><?php echo '<b>'.get_phrase('total_lesson').'</b>: '.$lessons->num_rows(); ?></small><br>
+                                        <small class="text-muted"><?php echo '<b>'.get_phrase('total_seccion').'</b>: '.$sections->num_rows(); ?></small><br>
+                                        <small class="text-muted"><?php echo '<b>'.get_phrase('total_leccion').'</b>: '.$lessons->num_rows(); ?></small><br>
                                     </td>
                                     <td>
-                                        <small class="text-muted"><?php echo '<b>'.get_phrase('total_enrolment').'</b>: '.$enroll_history->num_rows(); ?></small>
+                                        <small class="text-muted"><?php echo '<b>'.get_phrase('total_matriculados').'</b>: '.$enroll_history->num_rows(); ?></small>
                                     </td>
                                     <td class="text-center">
                                         <?php if ($course['status'] == 'pending'): ?>
@@ -204,7 +204,7 @@
                                                 <span class="badge badge-dark-lighten"><?php echo currency($course['price']); ?></span>
                                             <?php endif; ?>
                                         <?php elseif ($course['is_free_course'] == 1):?>
-                                            <span class="badge badge-success-lighten"><?php echo get_phrase('free'); ?></span>
+                                            <span class="badge badge-success-lighten"><?php echo get_phrase('libree'); ?></span>
                                         <?php endif; ?>
                                     </td>
                                     <td>
@@ -213,15 +213,15 @@
                                               <i class="mdi mdi-dots-vertical"></i>
                                           </button>
                                           <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="<?php echo site_url('home/course/'.slugify($course['title']).'/'.$course['id']); ?>" target="_blank"><?php echo get_phrase('view_course_on_frontend');?></a></li>
-                                              <li><a class="dropdown-item" href="<?php echo site_url('user/course_form/course_edit/'.$course['id']); ?>"><?php echo get_phrase('edit_this_course');?></a></li>
-                                              <li><a class="dropdown-item" href="<?php echo site_url('user/course_form/course_edit/'.$course['id']); ?>"><?php echo get_phrase('section_&_lesson');?></a></li>
+                                              <li><a class="dropdown-item" href="<?php echo site_url('home/course/'.slugify($course['title']).'/'.$course['id']); ?>" target="_blank"><?php echo get_phrase('vista_cursos_exterior');?></a></li>
+                                              <li><a class="dropdown-item" href="<?php echo site_url('user/course_form/course_edit/'.$course['id']); ?>"><?php echo get_phrase('editar_el_curso');?></a></li>
+                                              <li><a class="dropdown-item" href="<?php echo site_url('user/course_form/course_edit/'.$course['id']); ?>"><?php echo get_phrase('seccion_&_leccion');?></a></li>
                                               <?php if ($course['status'] == 'active' || $course['status'] == 'pending'): ?>
-                                                  <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('user/course_actions/draft/'.$course['id']); ?>');"><?php echo get_phrase('mark_as_drafted'); ?></a></li>
+                                                  <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('user/course_actions/draft/'.$course['id']); ?>');"><?php echo get_phrase('marcar_como_borrador'); ?></a></li>
                                               <?php else: ?>
-                                                  <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('user/course_actions/publish/'.$course['id']); ?>');"><?php echo get_phrase('publish_this_course'); ?></a></li>
+                                                  <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('user/course_actions/publish/'.$course['id']); ?>');"><?php echo get_phrase('publicar_curso'); ?></a></li>
                                               <?php endif; ?>
-                                              <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('user/course_actions/delete/'.$course['id']); ?>');"><?php echo get_phrase('delete_this_course'); ?></a></li>
+                                              <li><a class="dropdown-item" href="#" onclick="confirm_modal('<?php echo site_url('user/course_actions/delete/'.$course['id']); ?>');"><?php echo get_phrase('eliminar_curso'); ?></a></li>
                                           </ul>
                                       </div>
                                     </td>
@@ -233,7 +233,7 @@
                 <?php if (count($courses) == 0): ?>
                     <div class="img-fluid w-100 text-center">
                       <img style="opacity: 1; width: 100px;" src="<?php echo base_url('assets/backend/images/file-search.svg'); ?>"><br>
-                      <?php echo get_phrase('no_data_found'); ?>
+                      <?php echo get_phrase('los_datos_no_funcionan'); ?>
                     </div>
                 <?php endif; ?>
             </div>

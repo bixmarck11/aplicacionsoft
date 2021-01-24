@@ -145,13 +145,13 @@ class Home extends CI_Controller {
             redirect(site_url('home/my_messages/read_message/' . $param2), 'refresh');
         }
         $page_data['page_name'] = "my_messages";
-        $page_data['page_title'] = get_phrase('my_messages');
+        $page_data['page_title'] = get_phrase('mis_mensajes');
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
 
     public function my_notifications() {
         $page_data['page_name'] = "my_notifications";
-        $page_data['page_title'] = get_phrase('my_notifications');
+        $page_data['page_title'] = get_phrase('mis_notificaciones');
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
 
@@ -162,7 +162,7 @@ class Home extends CI_Controller {
         $my_courses = $this->crud_model->get_courses_by_wishlists();
         $page_data['my_courses'] = $my_courses;
         $page_data['page_name'] = "my_wishlist";
-        $page_data['page_title'] = get_phrase('my_wishlist');
+        $page_data['page_title'] = get_phrase('mis_favoritos');
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
 
@@ -178,7 +178,7 @@ class Home extends CI_Controller {
         $this->pagination->initialize($config);
         $page_data['per_page']   = $config['per_page'];
         $page_data['page_name']  = "purchase_history";
-        $page_data['page_title'] = get_phrase('purchase_history');
+        $page_data['page_title'] = get_phrase('contratacion_historial');
         $this->load->view('frontend/'.get_frontend_settings('theme').'/index', $page_data);
     }
 
@@ -189,7 +189,7 @@ class Home extends CI_Controller {
 
         if ($param1 == 'user_profile') {
             $page_data['page_name'] = "user_profile";
-            $page_data['page_title'] = get_phrase('user_profile');
+            $page_data['page_title'] = get_phrase('perfil_de_usuario');
         }elseif ($param1 == 'user_credentials') {
             $page_data['page_name'] = "user_credentials";
             $page_data['page_title'] = get_phrase('credentials');

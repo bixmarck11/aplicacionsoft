@@ -2,7 +2,7 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('add_new_course'); ?></h4>
+                <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('agregar_nuevo_curso'); ?></h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title mb-3"><?php echo get_phrase('course_adding_form'); ?>
+                <h4 class="header-title mb-3"><?php echo get_phrase('Formulario_agregar_curso'); ?>
                     <a href="<?php echo site_url('user/courses'); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a>
                 </h4>
 

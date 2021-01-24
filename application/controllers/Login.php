@@ -48,7 +48,7 @@ class Login extends CI_Controller {
                 redirect(site_url('home'), 'refresh');
             }
         }else {
-            $this->session->set_flashdata('error_message',get_phrase('invalid_login_credentials'));
+            $this->session->set_flashdata('error_message',get_phrase('datos_no_validos'));
             redirect(site_url('home/login'), 'refresh');
 
         }
@@ -106,13 +106,13 @@ class Login extends CI_Controller {
 
             if (get_settings('student_email_verification') == 'enable') {
                 $this->email_model->send_email_verification_mail($data['email'], $verification_code);
-                $this->session->set_flashdata('flash_message', get_phrase('your_registration_has_been_successfully_done').'. '.get_phrase('please_check_your_mail_inbox_to_verify_your_email_address').'.');
+                $this->session->set_flashdata('flash_message', get_phrase('tu_registro_fue_exitoso').'. '.get_phrase('please_check_your_mail_inbox_to_verify_your_email_address').'.');
             }else {
-                $this->session->set_flashdata('flash_message', get_phrase('your_registration_has_been_successfully_done'));
+                $this->session->set_flashdata('flash_message', get_phrase('tu_registro_fue_exitoso'));
             }
 
         }else {
-            $this->session->set_flashdata('error_message', get_phrase('email_duplication'));
+            $this->session->set_flashdata('error_message', get_phrase('email_duplicado'));
         }
         redirect(site_url('home'), 'refresh');
     }
@@ -148,14 +148,14 @@ class Login extends CI_Controller {
             $this->db->update('users' , array('password' => sha1($new_password)));
             // send new password to user email
             $this->email_model->password_reset_email($new_password, $email);
-            $this->session->set_flashdata('flash_message', get_phrase('please_check_your_email_for_new_password'));
+            $this->session->set_flashdata('flash_message', get_phrase('confirmar_con_el_correo_para_restaurar'));
             if ($from == 'backend') {
                 redirect(site_url('login'), 'refresh');
             }else {
                 redirect(site_url('home'), 'refresh');
             }
         }else {
-            $this->session->set_flashdata('error_message', get_phrase('password_reset_failed'));
+            $this->session->set_flashdata('error_message', get_phrase('reseteo_no_exitoso'));
             if ($from == 'backend') {
                 redirect(site_url('login'), 'refresh');
             }else {
@@ -167,7 +167,7 @@ class Login extends CI_Controller {
     public function verify_email_address($verification_code = "") {
         $user_details = $this->db->get_where('users', array('verification_code' => $verification_code));
         if($user_details->num_rows() == 0) {
-            $this->session->set_flashdata('error_message', get_phrase('email_duplication'));
+            $this->session->set_flashdata('error_message', get_phrase('email_duplicado'));
         }else {
             $user_details = $user_details->row_array();
             $updater = array(
@@ -175,7 +175,7 @@ class Login extends CI_Controller {
             );
             $this->db->where('id', $user_details['id']);
             $this->db->update('users', $updater);
-            $this->session->set_flashdata('flash_message', get_phrase('congratulations').'!'.get_phrase('your_email_address_has_been_successfully_verified').'.');
+            $this->session->set_flashdata('flash_message', get_phrase('felicitaciones').'!'.get_phrase('correo_verificado_correctamente').'.');
         }
         redirect(site_url('home'), 'refresh');
     }

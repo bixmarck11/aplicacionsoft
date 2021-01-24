@@ -38,7 +38,7 @@
                                     <li class="nav-item">
                                         <a href="#outcomes" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                             <i class="mdi mdi-camera-control mr-1"></i>
-                                            <span class="d-none d-sm-inline"><?php echo get_phrase('outcomes'); ?></span>
+                                            <span class="d-none d-sm-inline"><?php echo get_phrase('resultados'); ?></span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -177,13 +177,13 @@
                                     <div class="row justify-content-center">
                                         <div class="col-xl-8">
                                             <div class="form-group row mb-3">
-                                                <label class="col-md-2 col-form-label" for="outcomes"><?php echo get_phrase('outcomes'); ?></label>
+                                                <label class="col-md-2 col-form-label" for="outcomes"><?php echo get_phrase('resulados'); ?></label>
                                                 <div class="col-md-10">
                                                     <div id = "outcomes_area">
                                                         <div class="d-flex mt-2">
                                                             <div class="flex-grow-1 px-3">
                                                                 <div class="form-group">
-                                                                    <input type="text" class="form-control" name="outcomes[]" id="outcomes" placeholder="<?php echo get_phrase('provide_outcomes'); ?>">
+                                                                    <input type="text" class="form-control" name="outcomes[]" id="outcomes" placeholder="<?php echo get_phrase('resultados_proporcionados'); ?>">
                                                                 </div>
                                                             </div>
                                                             <div class="">
@@ -194,7 +194,7 @@
                                                             <div class="d-flex mt-2">
                                                                 <div class="flex-grow-1 px-3">
                                                                     <div class="form-group">
-                                                                        <input type="text" class="form-control" name="outcomes[]" id="outcomes" placeholder="<?php echo get_phrase('provide_outcomes'); ?>">
+                                                                        <input type="text" class="form-control" name="outcomes[]" id="outcomes" placeholder="<?php echo get_phrase('resultados_proporcionados'); ?>">
                                                                     </div>
                                                                 </div>
                                                                 <div class="">

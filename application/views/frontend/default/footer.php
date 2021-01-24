@@ -10,17 +10,17 @@
                     <div class="col-md-6">
                         <ul class="nav justify-content-md-end footer-menu">
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('home/about_us'); ?>"><?php echo get_phrase('about'); ?></a>
+                                <a class="nav-link" href="<?php echo site_url('home/about_us'); ?>"><?php echo get_phrase('acerca_de_nosotros'); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('home/privacy_policy'); ?>"><?php echo get_phrase('privacy_policy'); ?></a>
+                                <a class="nav-link" href="<?php echo site_url('home/privacy_policy'); ?>"><?php echo get_phrase('politica_de_privacidad'); ?></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('home/terms_and_condition'); ?>"><?php echo get_phrase('terms_&_condition'); ?></a>
+                                <a class="nav-link" href="<?php echo site_url('home/terms_and_condition'); ?>"><?php echo get_phrase('terminos_y_condiciones'); ?></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo site_url('home/login'); ?>">
-                                    <?php echo get_phrase('login'); ?>
+                                    <?php echo get_phrase('Ingreso'); ?>
                                 </a>
                             </li>
                         </ul>

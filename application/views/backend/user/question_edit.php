@@ -29,17 +29,17 @@
         <div class="form-group options">
             <label><?php echo get_phrase('option').' '.($i+1);?></label>
             <div class="input-group">
-                <input type="text" class="form-control" name = "options[]" id="option_<?php echo $i; ?>" placeholder="<?php echo get_phrase('option_').$i; ?>" required value="<?php echo $options[$i]; ?>">
+                <input type="text" class="form-control" name = "options[]" id="option_<?php echo $i; ?>" placeholder="<?php echo get_phrase('opcion_').$i; ?>" required value="<?php echo $options[$i]; ?>">
                 <div class="input-group-append">
                     <span class="input-group-text">
-                        <input type='checkbox' name = "correct_answers[]" value = <?php echo ($i+1); ?> <?php if(in_array(($i+1), $correct_answers)) echo 'checked'; ?>>
+                        <input type='checkbox' name = "correct_answers[]" value = <?php echo ($i+1); ?> <?php if(in_array(($i+1), $correct_answers)) echo 'verificado'; ?>>
                     </span>
                 </div>
             </div>
         </div>
     <?php endfor;?>
     <div class="text-center">
-        <button class = "btn btn-success" id = "submitButton" type="button" name="button" data-dismiss="modal"><?php echo get_phrase('submit'); ?></button>
+        <button class = "btn btn-success" id = "submitButton" type="button" name="button" data-dismiss="modal"><?php echo get_phrase('realizar'); ?></button>
     </div>
 </form>
 <script type="text/javascript">

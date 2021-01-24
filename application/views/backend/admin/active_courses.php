@@ -1,13 +1,13 @@
 <table class="table table-bordered" id="active_courses_table">
     <thead>
       <tr>
-        <th><?php echo get_phrase('title'); ?></th>
-        <th><?php echo get_phrase('category'); ?></th>
+        <th><?php echo get_phrase('titulo'); ?></th>
+        <th><?php echo get_phrase('categoria'); ?></th>
         <th><?php echo get_phrase('instructor'); ?></th>
-        <th><?php echo get_phrase('number_of_sections'); ?></th>
-        <th><?php echo get_phrase('number_of_lessons'); ?></th>
-        <th><?php echo get_phrase('number_of_enrolled_users'); ?></th>
-        <th><?php echo get_phrase('action'); ?></th>
+        <th><?php echo get_phrase('numero_de_secciones'); ?></th>
+        <th><?php echo get_phrase('numero_de_lecciones'); ?></th>
+        <th><?php echo get_phrase('numero_de_estudiantes_matriculados'); ?></th>
+        <th><?php echo get_phrase('accion'); ?></th>
       </tr>
     </thead>
     <tbody>
@@ -71,19 +71,19 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="<?php echo site_url('home/course/'.slugify($course['title']).'/'.$course['id']); ?>" target="_blank">
-                                    <?php echo get_phrase('view_course_on_frontend');?>
+                                    <?php echo get_phrase('vista_de_cursos_exterior');?>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="<?php echo site_url('admin/sections/'.$course['id']); ?>">
-                                    <?php echo get_phrase('manage_section');?>
+                                    <?php echo get_phrase('manejar_seccion');?>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="<?php echo site_url('admin/lessons/'.$course['id']); ?>">
-                                    <?php echo get_phrase('manage_lesson');?>
+                                    <?php echo get_phrase('manejar_lecciones');?>
                                 </a>
                             </li>
 
@@ -91,11 +91,11 @@
                             <li>
                                 <?php if ($course['user_id'] != $this->session->userdata('user_id')): ?>
                                     <a href="#" onclick="showAjaxModal('<?php echo base_url();?>modal/popup/mail_on_course_status_changing_modal/pending/<?php echo $course['id'].'/'.$default_category_id.'/'.$default_sub_category_id;?>');">
-                                        <?php echo get_phrase('mark_as_pending');?>
+                                        <?php echo get_phrase('marcar_como_pendiente');?>
                                     </a>
                                 <?php else: ?>
                                     <a href="#" onclick="confirm_modal('<?php echo site_url();?>admin/change_course_status_for_admin/pending/<?php echo $course['id'];?>', 'generic_confirmation');">
-                                        <?php echo get_phrase('mark_as_pending');?>
+                                        <?php echo get_phrase('marcar_como_pendiente');?>
                                     </a>
                                 <?php endif; ?>
                             </li>
@@ -103,14 +103,14 @@
 
                             <li>
                                 <a href="<?php echo site_url('admin/course_form/course_edit/'.$course['id']) ?>">
-                                    <?php echo get_phrase('edit');?>
+                                    <?php echo get_phrase('editar');?>
                                 </a>
                             </li>
 
                             <li class="divider"></li>
                             <li>
                                 <a href="#" onclick="confirm_modal('<?php echo site_url('admin/course_actions/delete/'.$course['id']); ?>');">
-                                    <?php echo get_phrase('delete');?>
+                                    <?php echo get_phrase('eliminar');?>
                                 </a>
                             </li>
                         </ul>
@@ -120,7 +120,7 @@
         <?php endforeach; ?>
         <?php if ($active_courses == 0): ?>
             <tr>
-                <td colspan="7"><?php echo get_phrase('no_data_found'); ?></td>
+                <td colspan="7"><?php echo get_phrase('datos_no_encontrados'); ?></td>
             </tr>
         <?php endif; ?>
     </tbody>
