@@ -75,17 +75,6 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="<?php echo site_url('admin/sections/'.$course['id']); ?>">
-                                    <?php echo get_phrase('manejar_seccion');?>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="<?php echo site_url('admin/lessons/'.$course['id']); ?>">
-                                    <?php echo get_phrase('manejar_lecciones');?>
-                                </a>
-                            </li>
 
 
                             <li>
