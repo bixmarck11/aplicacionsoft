@@ -1,16 +1,16 @@
 table.dataTable tbody > tr.selected,
 table.dataTable tbody > tr > .selected {
-  background-color: #0275d8;
+  background-color: #ac561d;
 }
 table.dataTable.stripe tbody > tr.odd.selected,
 table.dataTable.stripe tbody > tr.odd > .selected, table.dataTable.display tbody > tr.odd.selected,
 table.dataTable.display tbody > tr.odd > .selected {
-  background-color: #0172d2;
+  background-color: #d25f01;
 }
 table.dataTable.hover tbody > tr.selected:hover,
 table.dataTable.hover tbody > tr > .selected:hover, table.dataTable.display tbody > tr.selected:hover,
 table.dataTable.display tbody > tr > .selected:hover {
-  background-color: #0170d0;
+  background-color: #d06f01;
 }
 table.dataTable.order-column tbody > tr.selected > .sorting_1,
 table.dataTable.order-column tbody > tr.selected > .sorting_2,

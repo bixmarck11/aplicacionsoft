@@ -1023,7 +1023,7 @@ class Crud_model extends CI_Model {
             }else {
                 $data['amount'] = $course_details['price'];
             }
-            if (get_user_role('role_id', $course_details['user_id']) == 1) {
+            if ((get_user_role('role_id', $course_details['user_id']) == 1)||(get_user_role('role_id', $course_details['user_id']) == 3||(get_user_role('role_id', $course_details['user_id']) == 4))) {
                 $data['admin_revenue'] = $data['amount'];
                 $data['instructor_revenue'] = 0;
                 $data['instructor_payment_status'] = 1;

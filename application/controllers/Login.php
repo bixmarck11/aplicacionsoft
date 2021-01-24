@@ -19,7 +19,11 @@ class Login extends CI_Controller {
             redirect(site_url('admin'), 'refresh');
         }elseif ($this->session->userdata('user_login')) {
             redirect(site_url('user'), 'refresh');
-        }else {
+        }
+        
+       
+
+        else {
             redirect(site_url('home/login'), 'refresh');
         }
     }
@@ -40,13 +44,15 @@ class Login extends CI_Controller {
             $this->session->set_userdata('role', get_user_role('user_role', $row->id));
             $this->session->set_userdata('name', $row->first_name.' '.$row->last_name);
             $this->session->set_flashdata('flash_message', get_phrase('welcom').' '.$row->first_name.' '.$row->last_name);
-            if ($row->role_id == 1) {
+            if ($row->role_id == 1 || $row->role_id == 3 || $row->role_id == 4) {
                 $this->session->set_userdata('admin_login', '1');
                 redirect(site_url('admin/dashboard'), 'refresh');
             }else if($row->role_id == 2){
                 $this->session->set_userdata('user_login', '1');
                 redirect(site_url('home'), 'refresh');
             }
+        
+            
         }else {
             $this->session->set_flashdata('error_message',get_phrase('datos_no_validos'));
             redirect(site_url('home/login'), 'refresh');
@@ -128,9 +134,10 @@ class Login extends CI_Controller {
         $this->session->unset_userdata('role_id');
         $this->session->unset_userdata('role');
         $this->session->unset_userdata('name');
-        if ($this->session->userdata('admin_login') == 1) {
+        if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('admin_login') == 3 || $this->session->userdata('admin_login') == 4) {
             $this->session->unset_userdata('admin_login');
-        }else {
+        }
+        else {
             $this->session->unset_userdata('user_login');
         }
     }

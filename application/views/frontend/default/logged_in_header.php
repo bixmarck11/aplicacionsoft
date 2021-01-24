@@ -9,7 +9,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
 
                     <ul class="mobile-header-buttons">
                         <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
-                        <li><a class="mobile-search-trigger" href="#mobile-search">Search<span></span></a></li>
+                        <li><a class="mobile-search-trigger" href="#mobile-search">Buscar<span></span></a></li>
                     </ul>
 
                     <a href="<?php echo site_url(''); ?>" class="navbar-brand" href="#">

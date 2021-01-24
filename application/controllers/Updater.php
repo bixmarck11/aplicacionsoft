@@ -31,7 +31,7 @@ class Updater extends CI_Controller
     {
         if ($this->session->userdata('admin_login') != 1)
             redirect(site_url('login'), 'refresh');
-        if ($this->session->userdata('admin_login') == 1)
+        if ($this->session->userdata('admin_login') == 1 || $this->session->userdata('admin_login') == 3||$this->session->userdata('admin_login') == 4)
             redirect(site_url('admin/dashboard'), 'refresh');
     }
 
@@ -40,7 +40,7 @@ class Updater extends CI_Controller
     function update($task = '', $purchase_code = '')
     {
 
-        if ($this->session->userdata('admin_login') != 1)
+        if ($this->session->userdata('admin_login') != 1 || $this->session->userdata('admin_login') != 3 || $this->session->userdata('admin_login') != 4)
             redirect(base_url(), 'refresh');
 
         // Create update directory.

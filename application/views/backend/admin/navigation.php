@@ -13,8 +13,18 @@
 		</a>
 	</div>
 
-	<!--- Sidemenu -->
+	<!--- Sidemenu in case SUPER ROOT-->
+		<?php  if ($admin_details['first_name']== "super" && $admin_details['last_name']== "root" ): ?> 
 		<ul class="metismenu side-nav side-nav-light">
+
+
+									
+		<center>	
+		<span><?php echo get_phrase('Súper Administrador'); ?></span>	
+		</center>
+
+
+
 
 			<li class="side-nav-title side-nav-item"><?php echo get_phrase('navigation'); ?></li>
 
@@ -24,7 +34,6 @@
 					<span><?php echo get_phrase('dashboard'); ?></span>
 				</a>
 			</li>
-
 			<li class="side-nav-item <?php if ($page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' ): ?> active <?php endif; ?>">
 				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'categories' || $page_name == 'category_add' || $page_name == 'category_edit' ): ?> active <?php endif; ?>">
 					<i class="dripicons-network-1"></i>
@@ -97,6 +106,46 @@
 				</a>
 			</li>
 
+		</li>
+		
+	</ul>
+	<?php endif; ?>
+
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--- Sidemenu in case Administrador del Negocio-->
+	<?php  if ($admin_details['first_name']== "admin" && $admin_details['last_name']== "sistema" ): ?> 
+		<ul class="metismenu side-nav side-nav-light">
+
+						
+		<center>	
+		<span><?php echo get_phrase('Administrador del Negocio'); ?></span>	
+		</center>
+
+
+
+
+			<li class="side-nav-title side-nav-item"><?php echo get_phrase('navigation'); ?></li>
+
+			<li class="side-nav-item <?php if ($page_name == 'dashboard')echo 'active';?>">
+				<a href="<?php echo site_url('admin/dashboard'); ?>" class="side-nav-link">
+					<i class="dripicons-view-apps"></i>
+					<span><?php echo get_phrase('dashboard'); ?></span>
+				</a>
+			</li>
 			<li class="side-nav-item">
 			<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'system_settings' || $page_name == 'frontend_settings' || $page_name == 'payment_settings' || $page_name == 'instructor_settings' || $page_name == 'smtp_settings' || $page_name == 'manage_language' || $page_name == 'about' || $page_name == 'themes' || $page_name == 'mobile_app' ): ?> active <?php endif; ?>">
 				<i class="dripicons-toggles"></i>
@@ -116,22 +165,100 @@
 				<li class = "<?php if($page_name == 'instructor_settings') echo 'active'; ?>">
 					<a href="<?php echo site_url('admin/instructor_settings'); ?>"><?php echo get_phrase('instructor_settings'); ?></a>
 				</li>
-				<li class = "<?php if($page_name == 'manage_language') echo 'active'; ?>">
-					<a href="<?php echo site_url('admin/manage_language'); ?>"><?php echo get_phrase('language_settings'); ?></a>
-				</li>
+				
+
 				<li class = "<?php if($page_name == 'smtp_settings') echo 'active'; ?>">
 					<a href="<?php echo site_url('admin/smtp_settings'); ?>"><?php echo get_phrase('smtp_settings'); ?></a>
 				</li>
-				<li class = "<?php if($page_name == 'about') echo 'active'; ?>">
-					<a href="<?php echo site_url('admin/about'); ?>"><?php echo get_phrase('about'); ?></a>
-				</li>
-				<li class = "<?php if($page_name == 'themes') echo 'active'; ?>">
-					<a href="<?php echo site_url('admin/themes'); ?>"><?php echo get_phrase('themes'); ?></a>
-				</li>
-				<li class = "<?php if($page_name == 'mobile_app') echo 'active'; ?>">
-					<a href="<?php echo site_url('admin/mobile_app'); ?>"><?php echo get_phrase('mobile_app'); ?></a>
-				</li>
+	
+		
 			</ul>
 		</li>
-	    </ul>
+		
+	</ul>
+	<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!--- Sidemenu in case teacher-->
+	<?php  if ($admin_details['last_name']== "profesor"): ?> 
+		<ul class="metismenu side-nav side-nav-light">
+
+
+			
+		<center>	
+		<span><?php echo get_phrase('Profesor de la UTN'); ?></span>	
+		</center>
+
+
+			<li class="side-nav-title side-nav-item"><?php echo get_phrase('navigation'); ?></li>
+
+
+			<li class="side-nav-item">
+				<a href="<?php echo site_url('admin/courses'); ?>" class="side-nav-link <?php if ($page_name == 'courses' || $page_name == 'course_add' || $page_name == 'course_edit')echo 'active';?>">
+					<i class="dripicons-archive"></i>
+					<span><?php echo get_phrase('courses'); ?></span>
+				</a>
+			</li>
+			<li class="side-nav-item">
+				<a href="<?php echo site_url('admin/users'); ?>" class="side-nav-link <?php if ($page_name == 'users' || $page_name == 'user_add' || $page_name == 'user_edit')echo 'active';?>">
+					<i class="dripicons-user-group"></i>
+					<span><?php echo get_phrase('students'); ?></span>
+				</a>
+			</li>
+
+			<li class="side-nav-item <?php if ($page_name == 'enrol_history' || $page_name == 'enrol_student'): ?> active <?php endif; ?>">
+				<a href="javascript: void(0);" class="side-nav-link <?php if ($page_name == 'enrol_history' || $page_name == 'enrol_student'): ?> active <?php endif; ?>">
+					<i class="dripicons-network-3"></i>
+		
+					<span> <?php echo get_phrase('enrolment'); ?> </span>
+					<span class="menu-arrow"></span>
+				</a>
+				<ul class="side-nav-second-level" aria-expanded="false">
+					<li class = "<?php if($page_name == 'enrol_history') echo 'active'; ?>">
+						<a href="<?php echo site_url('admin/enrol_history'); ?>"><?php echo get_phrase('enrol_history'); ?></a>
+					</li>
+
+					<li class = "<?php if($page_name == 'enrol_student') echo 'active'; ?>">
+						<a href="<?php echo site_url('admin/enrol_student'); ?>"><?php echo get_phrase('enrol_a_student'); ?></a>
+					</li>
+				</ul>
+			</li>
+
+
+
+			<li class="side-nav-item">
+				<a href="<?php echo site_url('admin/message'); ?>" class="side-nav-link <?php if ($page_name == 'message' || $page_name == 'message_new' || $page_name == 'message_read')echo 'active';?>">
+					<i class="dripicons-message"></i>
+					<span><?php echo get_phrase('message'); ?></span>
+				</a>
+			</li>
+
+		
+		
+	</ul>
+	<?php endif; ?>
+
+	
 </div>

@@ -12,7 +12,7 @@ class User_model extends CI_Model {
     }
 
     public function get_admin_details() {
-        return $this->db->get_where('users', array('role_id' => 1));
+        return $this->db->get_where('users', array('role_id' => 1,'role_id' => 3,'role_id' => 4));
     }
 
     public function get_user($user_id = 0) {
