@@ -8639,17 +8639,17 @@ body[data-layout="detached"] {
       display: none; } }
 
 .topnav-navbar-dark {
-  background-color: #404954; }
+  background-color: #d3150f; }
   .topnav-navbar-dark .nav-user {
-    background-color: #4b5662;
-    border: 1px solid #515c6a; }
+    background-color: #d3150f;
+    border: 1px solid #d3150f; }
   .topnav-navbar-dark .topbar-right-menu li.show .nav-link {
-    color: #fff; }
+    color: #d3150f; }
   .topnav-navbar-dark .app-search .form-control {
-    background-color: #464f5b;
-    color: #fff; }
+    background-color: #d3150f;
+    color: #d3150f; }
   .topnav-navbar-dark .app-search span {
-    color: #ced4da; }
+    color: #dc7169; }
 
 .right-bar {
   background-color: #37404a;
