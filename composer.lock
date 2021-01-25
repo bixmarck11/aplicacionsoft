@@ -1130,8 +1130,8 @@
             ],
             "authors": [
                 {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "name": "SSSn",
+                    "email": "sS@phpunit.de"
                 }
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
