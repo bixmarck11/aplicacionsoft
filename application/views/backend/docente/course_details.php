@@ -21,16 +21,7 @@
                             <td><?php echo $course_details['title']; ?></td>
                         </tr>
 
-                        <tr>
-                            <th width = "50%"><?php echo get_phrase('instructor'); ?>:</th>
-                            <td>
-                                <?php
-                                    $admin_details = $this->user_model->get_admin_details()->row_array();
-                                    echo $admin_details['first_name'].' '.$admin_details['last_name'];
-                                ?>
-                            </td>
-                        </tr>
-
+                       
                         <tr>
                             <th><?php echo get_phrase('category'); ?>:</th>
                             <td>
