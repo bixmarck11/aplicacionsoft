@@ -845,4 +845,24 @@ class Admin extends CI_Controller {
     $question_json = $this->input->post('itemJSON');
     $this->crud_model->sort_question($question_json);
   }
+
+
+
+  
+  public function ajax_get_sources_data() {
+    $video_details = $this->video_model->getVideoDetails($_POST['video_url']);
+    echo $video_details['duration'];
+  }
+  public function ajax_sources_section() {
+    $section_json = $this->input->post('itemJSON');
+    $this->crud_model->sort_section($section_json);
+  }
+  public function ajax_sources_lesson() {
+    $lesson_json = $this->input->post('itemJSON');
+    $this->crud_model->sort_lesson($lesson_json);
+  }
+  public function ajax_sources_question() {
+    $question_json = $this->input->post('itemJSON');
+    $this->crud_model->sort_question($question_json);
+  }
 }
