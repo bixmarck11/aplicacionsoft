@@ -779,5 +779,8 @@
     "bienvenido_-_utn": "Bienvenido - UTN",
     "profesor_de_la_utn": "Profesor de la utn",
     "administrador_del_negocio": "Administrador del negocio",
-    "súper_administrador": "Súper administrador"
+    "súper_administrador": "Súper administrador",
+    "dato_eliminado": "Dato eliminado",
+    "datos_agregados_correctamente": "Datos agregados correctamente",
+    "curso_estado_actualizado": "Curso estado actualizado"
 }
