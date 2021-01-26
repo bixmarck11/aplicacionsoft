@@ -1,4 +1,4 @@
-Aplicacion Proyecto Softare:
+Aplicacion Proyecto Software:
 
 Recursos>>
 
