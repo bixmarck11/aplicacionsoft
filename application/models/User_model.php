@@ -22,6 +22,11 @@ class User_model extends CI_Model {
         $this->db->where('role_id', 2);
         return $this->db->get('users');
     }
+    public function get_user_teacher($user_id = 0) {
+        $this->db->where('role_id', 1);
+        return $this->db->get('users');
+    }
+
 
     public function get_all_user($user_id = 0) {
         if ($user_id > 0) {

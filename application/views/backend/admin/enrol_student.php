@@ -42,6 +42,20 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="user_id"><?php echo get_phrase('user'); ?><span class="required">*</span> </label>
+                        <select class="form-control select2" data-toggle="select2" name="user_id" id="user_id" required>
+                            <option value=""><?php echo get_phrase('select_a_user'); ?></option>
+                            <?php $user_list = $this->user_model->get_user_teacher()->result_array();
+                                foreach ($user_list as $user):?>
+                            <?php  if ($user['last_name']=="profesor"){ ?>
+                                <option value="<?php echo $user['id'] ?>"><?php echo $user['first_name'].' '.$user['last_name']; ?></option>
+
+                                <?php }  ?>    
+                            <?php endforeach; ?>
+                        </select>
+                    </div>                
+                                    
                     <button type="button" class="btn btn-primary" onclick="checkRequiredFields()"><?php echo get_phrase('enrol_student'); ?></button>
                 </form>
               </div>
