@@ -782,5 +782,9 @@
     "súper_administrador": "Súper administrador",
     "dato_eliminado": "Dato eliminado",
     "datos_agregados_correctamente": "Datos agregados correctamente",
-    "curso_estado_actualizado": "Curso estado actualizado"
+    "curso_estado_actualizado": "Curso estado actualizado",
+    "docente": "Docente",
+    "smtp_configuraciones_realizadas": "Smtp configuraciones realizadas",
+    "confirmar_con_el_correo_para_restaurar": "Confirmar con el correo para restaurar",
+    "password_updated": "Password updated"
 }

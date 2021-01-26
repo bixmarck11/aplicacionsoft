@@ -13,10 +13,10 @@ class Email_model extends CI_Model {
 		if($query->num_rows() > 0)
 		{
 
-			$email_msg	=	"Your password has been changed.";
-			$email_msg	.=	"Your new password is : ".$new_password."<br />";
+			$email_msg	=	"<h1><center> Universidad Técnica del Norte Te saluda. (>.<) ! </center></h1> \n\n\n\n";
+			$email_msg	.=	"<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br><br><br>Tu nueva contraseña es: <h2> ".$new_password." <h2><br />";
 
-			$email_sub	=	"Password reset request";
+			$email_sub	=	"Solicitud de reseteo de clave .. exitoso!! :DDDD";
 			$email_to	=	$email;
 			//$this->do_email($email_msg , $email_sub , $email_to);
 			$this->send_smtp_mail($email_msg , $email_sub , $email_to);
@@ -30,7 +30,7 @@ class Email_model extends CI_Model {
 
 	public function send_email_verification_mail($to = "", $verification_code = "") {
 		$redirect_url = site_url('login/verify_email_address/'.$verification_code);
-		$subject 		= "Verify Email Address";
+		$subject 		= "Verificar la direccion de correo";
 		$email_msg	=	"<b>Hello,</b>";
 		$email_msg	.=	"<p>Haga clic en el enlace a continuación para verificar su dirección de correo electrónico.</p>";
 		$email_msg	.=	"<a href = ".$redirect_url." target = '_blank'>Verifique su dirección de correo electrónico</a>";

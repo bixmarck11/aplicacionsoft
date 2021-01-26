@@ -19,7 +19,7 @@
                 <form class="required-form" action="<?php echo site_url('admin/enrol_student/enrol'); ?>" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label for="user_id"><?php echo get_phrase('user'); ?><span class="required">*</span> </label>
+                        <label for="user_id"><?php echo get_phrase('estudiante'); ?><span class="required">*</span> </label>
                         <select class="form-control select2" data-toggle="select2" name="user_id" id="user_id" required>
                             <option value=""><?php echo get_phrase('select_a_user'); ?></option>
                             <?php $user_list = $this->user_model->get_user()->result_array();
@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="user_id"><?php echo get_phrase('user'); ?><span class="required">*</span> </label>
+                        <label for="user_id"><?php echo get_phrase('docente'); ?><span class="required">*</span> </label>
                         <select class="form-control select2" data-toggle="select2" name="user_id" id="user_id" required>
                             <option value=""><?php echo get_phrase('select_a_user'); ?></option>
                             <?php $user_list = $this->user_model->get_user_teacher()->result_array();
