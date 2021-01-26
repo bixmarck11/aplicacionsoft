@@ -17,3 +17,8 @@ APP UTN
 Admin
 user: admin@example.com
 pass: admin
+
+Santacruz Leonel
+Quirola Bismarck
+Gavilanez Alex
+Moreta Santiago
