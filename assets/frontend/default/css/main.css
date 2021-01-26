@@ -4137,3 +4137,25 @@ div.tagsinput span.tag a {
 .quiz-options label {
   color: #3a3a3a;
 }
+
+
+
+
+
+
+.bg-quiz-data-generatelol {
+    background-color: #007791;
+    padding: 13px;
+}
+.login-form-generatelol, .register-form-generatelo, .forgot-password-form-generatelo {
+    background-color: #fff;
+    padding-bottom: 30px;
+}
+
+.mobile-main-nav-generatelo .all-category-devided-generatelo{
+    border-top:1px solid #f5f5f5;padding-top:10px;
+}
+
+.quiz-options-generatelo label {
+  color: #3a3a3a;
+}
