@@ -167,10 +167,7 @@
 				</li>
 				
 
-				<li class = "<?php if($page_name == 'smtp_settings') echo 'active'; ?>">
-					<a href="<?php echo site_url('admin/smtp_settings'); ?>"><?php echo get_phrase('smtp_settings'); ?></a>
-				</li>
-	
+				
 		
 			</ul>
 		</li>
